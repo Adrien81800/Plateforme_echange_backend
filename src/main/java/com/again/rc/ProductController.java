@@ -30,6 +30,12 @@ public class ProductController {
         return productService.addOrUpdateProduct(product);
     }
 
+    @PutMapping("")
+    public Product updateProduct(@RequestBody Product product) { return  productService.addOrUpdateProduct(product);}
+
+    @DeleteMapping("/{id}")
+    public void deleteById(@PathVariable Long id) { productService.deleteById(id);}
+
     @GetMapping("categorie/{id}")
     public List<Product> getAllProductsByCategorie(@PathVariable Long id) {
         return productService.getAllProductsByCategorie(id);
